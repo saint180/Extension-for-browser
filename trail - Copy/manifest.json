@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Hello",
+  "version": "1.0",
+  "description": "A browser extension which is used to monitor browser RAM Useage and efficient memory management system",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "notifications",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "1.png",
+      "48": "2.png",
+      "128": "3.png"
+    }
+  },
+  "icons": {
+    "16": "1.png",
+    "48": "2.png",
+    "128": "3.png"
+  }
+}

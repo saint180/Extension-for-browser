@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Monitor Settings</title>
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      width: 300px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    input.question {
+      font-size: 18px;
+      font-weight: 300;
+      border-radius: 2px;
+      margin: 0;
+      border: none;
+      width: 100%;
+      background: rgba(0, 0, 0, 0);
+      transition: padding-top 0.2s ease, margin-top 0.2s ease;
+      box-sizing: border-box;
+    }
+    input.question + label {
+      display: block;
+      position: relative;
+      white-space: nowrap;
+      padding: 0;
+      margin: 0;
+      width: 10%;
+      border-top: 1px solid #3498db;
+      transition: width 0.4s ease;
+      height: 0px;
+    }
+    input.question:focus + label {
+      width: 100%;
+    }
+    input.question:focus,
+    input.question:valid {
+      padding-top: 35px;
+    }
+    input.question:focus + label > span,
+    input.question:valid + label > span {
+      top: -50px;
+      font-size: 14px;
+      color: #333;
+    }
+    input.question + label > span {
+      font-weight: 300;
+      margin: 0;
+      position: absolute;
+      color: #8F8F8F;
+      font-size: 18px;
+      top: -36px;
+      left: 0px;
+      z-index: -1;
+      transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tab Monitor Settings</h1>
+  <div class="input-group">
+    <input type="number" name="memoryThreshold" class="question" id="memoryThreshold" required autocomplete="off" />
+    <label for="memoryThreshold"><span>Memory Threshold (MB)</span></label>
+  </div>
+  <div class="input-group">
+    <input type="number" name="idleThreshold" class="question" id="idleThreshold" required autocomplete="off" />
+    <label for="idleThreshold"><span>Idle Time Threshold (minutes)</span></label>
+  </div>
+  <button id="saveSettings">Save Settings</button>
+  <script src="popup.js"></script>
+</body>
+</html>
